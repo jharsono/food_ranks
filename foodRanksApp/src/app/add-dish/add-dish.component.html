@@ -1,0 +1,16 @@
+
+<h2>Add a dish for {{country.name}}</h2>
+<img src="{{country.imageUrl}}" alt="{{country.name}} flag" width="25%">
+
+<form (submit) = addDish(country._id)>
+  <p>
+    Dish Name:<input type="text" name="dishName" [(ngModel)]="newDish.name">
+  </p>
+  <p>
+  Description:<input type="text" name="dishDescription" [(ngModel)]="newDish.desc">
+  </p>
+  <p>
+    Image Link: <input type="text" name="imageUrl" [(ngModel)]="newDish.imageUrl">
+  </p>
+  <input type="submit" value="Submit"> <button [routerLink]='["/country/", country._id]'>Cancel</button>
+</form>

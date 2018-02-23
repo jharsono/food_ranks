@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <div id="countries">
+    <table style="width:100%">
+      <tr>
+        <th>Country Name</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let country of countries.countries">
+        <td><a [routerLink]="['/country', country._id]">{{ country.name }}</a></td>
+        <button [routerLink]="['/editCountry', country._id]">Edit</button> <button (click)="delete(country._id)">Delete</button>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

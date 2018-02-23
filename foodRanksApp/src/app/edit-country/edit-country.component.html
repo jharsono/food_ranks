@@ -1,0 +1,13 @@
+<div style="text-align:center">
+
+<img src="{{country.imageUrl}}" alt="{{country.name}} flag" width="25%">
+<form (submit)="updateCountry(country._id)">
+  <p>
+    Name: <input type="text" name="country.name" value="{{country.name}}" [(ngModel)]="country.name">
+  </p>
+  <p>
+    Image URL: <input type="text" name="country.imageUrl" value="{{country.imageUrl}}" [(ngModel)]="country.imageUrl">
+  </p>
+  <input type="submit" value="Update"> <button [routerLink]='["/home"]'>Cancel</button>
+</form>
+</div>

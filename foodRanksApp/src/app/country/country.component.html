@@ -1,0 +1,24 @@
+<div style="text-align:center">
+<h2>{{country.name}}</h2>
+<img src="{{country.imageUrl}}" alt="{{country.name}} flag" width="25%">
+<div><button [routerLink] = "['/addDish', country._id]">Add Dish</button>
+</div>
+
+<!-- {{dishes | json}} -->
+<div class="dish" *ngFor="let dish of dishes.dishes">
+<h3>{{dish.name}} - Votes: {{dish.votes}}</h3> {{dish.desc}}
+<p>
+    <img src="{{dish.imageUrl}}" width="25%">
+</p>
+<p>
+  Added on: {{ dish.createdAt | date:format:'yyyy-MM-dd' }}
+</p>
+<p>
+  <button (click)="upvoteDish(dish)">Upvote</button>
+  <button (click)="downvoteDish(dish)">Downvote</button>
+  <button (click)="deleteDish(dish._id)">Delete</button>
+</p>
+</div>
+
+<router-outlet></router-outlet>
+</div>
